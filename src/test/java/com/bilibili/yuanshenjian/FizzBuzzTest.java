@@ -1,8 +1,10 @@
-package com.tdd;
+package com.bilibili.yuanshenjian;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
+
+import com.bilibili.yuanshenjian.FizzBuzzPrinter;
 
 public class FizzBuzzTest {
 	

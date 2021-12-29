@@ -1,23 +1,31 @@
 package com.udemy.discount;
 
-public class ProposalGenerator {
+import java.util.Calendar;
 
+public class ProposalGenerator {
+	
+	private Clock clock;
+	
+	public ProposalGenerator(Clock clock) {
+		this.clock = clock;
+	}
 	
 	public double calculateDiscount(Basket basket) {
 		if(isJanuary()) return basket.getAmount() * 0.05;
 		if(isChristmas()) return basket.getAmount() * 0.15;
 		
-		return 0;
+		return basket.getAmount();
 	}
 
 	private boolean isChristmas() {
-		// TODO Auto-generated method stub
-		return false;
+		Calendar today = clock.now();
+		return today.get(Calendar.MONTH) == Calendar.DECEMBER &&
+				today.get(Calendar.DATE) == 25;
 	}
 
 	private boolean isJanuary() {
-		// TODO Auto-generated method stub
-		return false;
+		Calendar today = clock.now();
+		return today.get(Calendar.MONTH) == Calendar.JANUARY;
 	}
 	
 	
